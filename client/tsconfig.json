@@ -12,6 +12,9 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
+    "paths": {
+      "style-guide": ["./dist/style-guide"]
+    },
     "module": "preserve"
   },
   "angularCompilerOptions": {
@@ -19,5 +22,19 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/site/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/site/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/style-guide/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/style-guide/tsconfig.spec.json"
+    }
+  ]
 }

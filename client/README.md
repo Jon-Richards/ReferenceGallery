@@ -1,16 +1,38 @@
 # Client
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.6.
+> While care has been taken to keep the docs up to date, the sources of truth
+> are `package.json`, `angular.json`, and `tsconfig.json`.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+The client side application is comprised of two projects: Site and Style Guide.
+
+Site is the main client side web application that the user interacts with.
+Style Guide is a library of presentational components that can be by other
+projects for building a consistent UI.
+
+## Building The Project
+
+### 1: Build the Style Guide
 
 ```bash
-npx ng serve
+npx ng build style-guide
+
+# Watch mode:
+npx ng build style-guide --watch
+```
+
+### 2: Build the Site
+
+```bash
+npx ng build site
+
+# Watch mode:
+npx ng build-site --watch
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
 
 ## Code scaffolding
 
@@ -26,15 +48,8 @@ For a complete list of available schematics (such as `components`, `directives`,
 npx ng generate --help
 ```
 
+
 ## Building
-
-To build the project run:
-
-```bash
-npx ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
 ## Running unit tests
 
@@ -43,6 +58,7 @@ To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use th
 ```bash
 npx ng test
 ```
+
 
 ## Running end-to-end tests
 
@@ -53,6 +69,7 @@ npx ng e2e
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
 
 ## Additional Resources
 
