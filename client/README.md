@@ -5,30 +5,51 @@
 
 ## Overview
 
-The client side application is comprised of two projects: Site and Style Guide.
+The client side application is divided into three layers:
+- Core Libraries ("Core")
+- Features
+- Pages
 
-Site is the main client side web application that the user interacts with.
-Style Guide is a library of presentational components that can be by other
-projects for building a consistent UI.
+Core Libraries are units of base functionality.  Core Libraries may be types
+definitions, pipes, services, utilities, and granular presentational components.
+Core Libraries may only inherit from third party dependencies, e.g. Lodash.
+Core Libraries should never communicate with the server layer directly.
+
+Features are cohesive units of complex functionality.  Features may import Core
+Libraries.  Features may have their own internal state. Features may NOTcommunicate directly with the server layer.  Features are often shared across two or more Pages.
+
+Pages can be thought of as "screens" or "views".  To keep bundle sizes down,
+each Page is a unique Angular application.  Pages may compose multiple Features
+into a cohesive client side web application, and are responsible for managing
+communication back to the server.  Pages may also control global state.  They
+may inherit from Core libraries and Features alike.
 
 ## Building The Project
 
-### 1: Build the Style Guide
+### 1: Build the Core Libraries
 
 ```bash
-npx ng build style-guide
+npx ng build core
 
 # Watch mode:
-npx ng build style-guide --watch
+npx ng build core --watch
 ```
 
-### 2: Build the Site
+### 2: Build the Features
 
 ```bash
-npx ng build site
+npx ng build features
 
 # Watch mode:
-npx ng build-site --watch
+npx ng build features --watch
+```
+
+### 3: Build the desired Page
+```bash
+npx ng build my-page
+
+# Watch mode:
+npx ng build my-page --watch
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -36,7 +57,15 @@ Once the server is running, open your browser and navigate to `http://localhost:
 
 ## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Use Angular's CLI for scaffolding new Core libraries, Features, and Pages.
+
+To generate a Page:
+
+```bash
+npx ng generate my-page -o ./projects/pages/my-page --routing=false --ssr=false --standalone=true
+```
+
+To generate a component:
 
 ```bash
 npx ng generate component component-name

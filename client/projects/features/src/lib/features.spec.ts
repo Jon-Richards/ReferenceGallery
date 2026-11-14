@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { StyleGuide } from './style-guide';
+import { Features } from './features';
 
-describe('StyleGuide', () => {
-  let component: StyleGuide;
-  let fixture: ComponentFixture<StyleGuide>;
+describe('Features', () => {
+  let component: Features;
+  let fixture: ComponentFixture<Features>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StyleGuide],
+      imports: [Features],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StyleGuide);
+    fixture = TestBed.createComponent(Features);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

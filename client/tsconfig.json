@@ -13,6 +13,8 @@
     "importHelpers": true,
     "target": "ES2022",
     "paths": {
+      "core": ["./dist/core"],
+      "features": ["./dist/features"],
       "style-guide": ["./dist/style-guide"]
     },
     "module": "preserve"
@@ -25,16 +27,16 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/site/tsconfig.app.json"
+      "path": "./projects/core/tsconfig.lib.json"
     },
     {
-      "path": "./projects/site/tsconfig.spec.json"
+      "path": "./projects/core/tsconfig.spec.json"
     },
     {
-      "path": "./projects/style-guide/tsconfig.lib.json"
+      "path": "./projects/features/tsconfig.lib.json"
     },
     {
-      "path": "./projects/style-guide/tsconfig.spec.json"
+      "path": "./projects/features/tsconfig.spec.json"
     }
   ]
 }
