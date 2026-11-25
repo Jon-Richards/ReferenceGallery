@@ -24,16 +24,26 @@ To build the library, run:
 ng build core
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+Or use environment-specific configurations:
+
+```bash
+# Development build (outputs to dist/core)
+ng build core --project ./ng-package.dev.json
+
+# Production build (outputs to server/src/Website/wwwroot/bundle/core)
+ng build core --project ./ng-package.json
+```
+
+Build artifacts are placed in `dist/core` for development or `server/src/Website/wwwroot/bundle/core` for production, depending on which configuration is used.
 
 ### Publishing the Library
 
 Once the project is built, you can publish your library by following these steps:
 
-1. Navigate to the `dist` directory:
+1. Navigate to the build output directory:
 
    ```bash
-   cd dist/core
+   cd server/src/Website/wwwroot/bundle/core
    ```
 
 2. Run the `npm publish` command to publish your library to the npm registry:

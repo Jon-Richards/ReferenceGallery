@@ -6,6 +6,9 @@
 # dotenv files
 .env
 
+# Compiled output from the Client app
+bundle/
+
 # User-specific files
 *.rsuser
 *.suo

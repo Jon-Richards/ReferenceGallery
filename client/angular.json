@@ -16,9 +16,11 @@
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
+              "project": "projects/core/ng-package.json",
               "tsConfig": "projects/core/tsconfig.lib.prod.json"
             },
             "development": {
+              "project": "projects/core/ng-package.dev.json",
               "tsConfig": "projects/core/tsconfig.lib.json"
             }
           },
@@ -45,6 +47,7 @@
               "tsConfig": "projects/features/tsconfig.lib.prod.json"
             },
             "development": {
+              "project": "projects/features/ng-package.dev.json",
               "tsConfig": "projects/features/tsconfig.lib.json"
             }
           },
