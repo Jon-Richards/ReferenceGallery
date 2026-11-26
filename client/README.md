@@ -38,6 +38,12 @@ control global state.  They may inherit from Core libraries and Features alike.
 
 ## Building The Project
 
+### Building All Projects
+
+```bash
+npm run build:all
+```
+
 ### 1: Build the Core Libraries
 
 ```bash
