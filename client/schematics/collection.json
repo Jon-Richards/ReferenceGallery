@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "view": {
+      "aliases": ["v"],
+      "factory": "./view",
+      "schema": "./view/schema.json",
+      "description": "Generate a ReferenceGallery view application."
+    }
+  }
+}

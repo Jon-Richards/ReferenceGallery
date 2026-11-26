@@ -81,7 +81,7 @@ Use Angular's CLI for scaffolding new Core libraries, Features, and Views.
 To generate a View:
 
 ```bash
-npx ng generate application my-view -o ./projects/views/my-view --routing=false --ssr=false --standalone=true
+npx ng generate view my-view
 ```
 
 To generate a component:
