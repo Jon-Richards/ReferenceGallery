@@ -8,23 +8,33 @@
 The client side application is divided into three layers:
 - Core Libraries ("Core")
 - Features
-- Pages
+- Views
 
-Core Libraries are units of base functionality.  Core Libraries may be types
-definitions, pipes, services, utilities, and granular presentational components.
-Core Libraries may only inherit from third party dependencies, e.g. Lodash.
-Core Libraries should never communicate with the server layer directly.
+### Core
+
+Core Libraries ("Core") are units of base functionality.  Core Libraries may be
+types definitions, pipes, services, utilities, and granular presentational
+components. Core Libraries may only inherit from third party dependencies, e.g.
+Lodash. Core Libraries should never communicate with the server layer directly.
+
+### Features
 
 Features are cohesive units of complex functionality.  Features may import Core
 Libraries.  Features may have their own internal state. Features may NOT
 communicate directly with the server layer.  Features are often shared across
-two or more Pages.
+two or more Views.
 
-Pages can be thought of as "screens" or "views".  To keep bundle sizes down,
-each Page is a unique Angular application.  Pages may compose multiple Features
-into a cohesive client side web application, and are responsible for managing
-communication back to the server.  Pages may also control global state.  They
-may inherit from Core libraries and Features alike.
+### Views
+
+Organizationally, views are divided into pages.  For example, an "Albums" domain
+might have views for "create", "read", "update", and "delete" with a slightly
+different UI that facilitates each operation.
+
+To keep bundle sizes down, routing is handled on the server side.  This means
+that each view is essentially its own sandboxed Angular application. Views may
+compose multiple Features into a cohesive client side web application, and are
+responsible for managing communication back to the server.  Views may also
+control global state.  They may inherit from Core libraries and Features alike.
 
 ## Building The Project
 
@@ -52,27 +62,26 @@ npx ng build features --project ./projects/features/ng-package.dev.json
 npx ng build features --watch
 ```
 
-### 3: Build the desired Page
+### 3: Build the desired View
 ```bash
-npx ng build my-page
+npx ng build my-view
 
 # Watch mode:
-npx ng build my-page --watch
+npx ng build my-view --watch
 ```
 
 Once the server is running, open your browser and navigate to
 `http://localhost:4200/`. The application will automatically reload whenever you
 modify any of the source files.
 
-
 ## Code scaffolding
 
-Use Angular's CLI for scaffolding new Core libraries, Features, and Pages.
+Use Angular's CLI for scaffolding new Core libraries, Features, and Views.
 
-To generate a Page:
+To generate a View:
 
 ```bash
-npx ng generate my-page -o ./projects/pages/my-page --routing=false --ssr=false --standalone=true
+npx ng generate application my-view -o ./projects/views/my-view --routing=false --ssr=false --standalone=true
 ```
 
 To generate a component:
@@ -88,8 +97,9 @@ or `pipes`), run:
 npx ng generate --help
 ```
 
-
 ## Building
+
+TBA
 
 ## Running unit tests
 
@@ -99,7 +109,6 @@ the following command:
 ```bash
 npx ng test
 ```
-
 
 ## Running end-to-end tests
 
@@ -111,7 +120,6 @@ npx ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You
 can choose one that suits your needs.
-
 
 ## Additional Resources
 
