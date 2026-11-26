@@ -7,7 +7,7 @@
 .env
 
 # Compiled output from the Client app
-bundle/
+bundles/
 
 # User-specific files
 *.rsuser

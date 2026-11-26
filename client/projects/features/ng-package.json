@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../../server/src/Website/wwwroot/bundle/features",
+  "dest": "../../../server/src/Website/wwwroot/bundles/features",
   "lib": {
     "entryFile": "src/public-api.ts"
   }
