@@ -116,6 +116,34 @@ the following command:
 npx ng test
 ```
 
+## Code Linting
+
+The project uses ESLint for TypeScript linting and StyleLint for CSS/SCSS linting, integrated with Prettier.
+
+### ESLint (TypeScript)
+
+Lint all TypeScript files:
+```bash
+npm run lint
+```
+
+Auto-fix linting issues:
+```bash
+npm run lint:fix
+```
+
+### StyleLint (CSS/SCSS)
+
+Check CSS/SCSS files:
+```bash
+npm run style
+```
+
+Auto-fix styling issues:
+```bash
+npm run style:fix
+```
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

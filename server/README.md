@@ -56,3 +56,32 @@ Execute the xUnit test suite from the server directory:
 ```bash
 dotnet test
 ```
+
+## Code Linting
+
+The project uses StyleCop and Roslynator analyzers to enforce C# code style and best practices. Linting runs automatically during the build process.
+
+### Running Analysis
+
+Build the solution (automatically runs linting):
+```bash
+dotnet build
+```
+
+Force a clean rebuild with fresh analysis:
+```bash
+dotnet build --no-incremental
+```
+
+Clean build artifacts:
+```bash
+dotnet clean
+```
+
+### Configuration
+
+Code style rules are defined in `.editorconfig` and enforced by:
+- **StyleCop.Analyzers** — C# code style conventions
+- **Roslynator.Analyzers** — Advanced code quality and best practices
+
+Both analyzers run automatically during compilation and report issues as warnings or suggestions based on the configured severity levels.
