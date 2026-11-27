@@ -13,10 +13,21 @@
     "lint:ts": "eslint . --ext .ts",
     "lint:ts:fix": "eslint . --ext .ts --fix",
     "lint:styles": "stylelint \"**/*.{css,scss}\"",
-    "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix"
+    "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix",
+    "prepare": "cd .. && husky install client"
   },
   "private": true,
   "packageManager": "npm@11.19.0",
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@angular/common": "^22.2.0",
     "@angular/compiler": "^22.2.0",
@@ -36,7 +47,9 @@
     "eslint": "^9.39.5",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-prettier": "^5.5.7",
+    "husky": "^9.1.7",
     "jsdom": "^30.0.0",
+    "lint-staged": "^17.6.2",
     "ng-packagr": "^22.2.0",
     "postcss": "^8.5.3",
     "prettier": "^3.8.1",

@@ -144,6 +144,25 @@ Auto-fix styling issues:
 npm run style:fix
 ```
 
+### Pre-commit Hooks
+
+Linting and type checking run automatically before each commit via Husky and lint-staged. This ensures only quality code is committed.
+
+**Setup** (runs automatically on first `npm install`):
+```bash
+npm install
+```
+
+If you need to manually initialize hooks:
+```bash
+cd .. && npm run prepare
+```
+
+**Bypass hooks** (use with caution):
+```bash
+git commit --no-verify
+```
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

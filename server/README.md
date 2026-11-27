@@ -28,6 +28,7 @@ local user authentication via ASP.NET Core Identity with support for passkeys.
 ## Prerequisites
 
 * [.NET 10 SDK](https://dotnet.microsoft.com/download)
+* [Python 3.8+](https://www.python.org/downloads/) (for pre-commit hooks)
 
 ## Getting Started
 
@@ -42,7 +43,16 @@ local user authentication via ASP.NET Core Identity with support for passkeys.
    dotnet ef database update --project src/Website
    ```
 
-3. **Run the application:**
+3. **Initialize pre-commit hooks** (one-time setup):
+   ```powershell
+   .\setup-hooks.ps1
+   ```
+   Or if you have `pre-commit` already installed:
+   ```bash
+   pre-commit install
+   ```
+
+4. **Run the application:**
    ```bash
    dotnet run --project src/Website
    ```
@@ -85,3 +95,21 @@ Code style rules are defined in `.editorconfig` and enforced by:
 - **Roslynator.Analyzers** — Advanced code quality and best practices
 
 Both analyzers run automatically during compilation and report issues as warnings or suggestions based on the configured severity levels.
+
+### Pre-commit Hooks
+
+Linting and testing run automatically before each commit via the pre-commit framework. Commits are blocked if:
+- Build fails (code style violations)
+- Tests fail
+
+**Setup** (after cloning):
+```powershell
+.\setup-hooks.ps1
+```
+
+This installs the pre-commit framework and initializes hooks to run `dotnet build` and `dotnet test` on each commit.
+
+**Bypass hooks** (use with caution):
+```bash
+git commit --no-verify
+```

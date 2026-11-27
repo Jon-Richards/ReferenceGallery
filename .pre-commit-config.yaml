@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: dotnet-build
+        name: dotnet build
+        entry: dotnet build --no-restore
+        language: system
+        types: [csharp]
+        pass_filenames: false
+        stages: [commit]
+
+      - id: dotnet-test
+        name: dotnet test
+        entry: dotnet test --no-build --verbosity quiet
+        language: system
+        types: [csharp]
+        pass_filenames: false
+        stages: [commit]
+        require_serial: true
