@@ -7,7 +7,13 @@
     "build": "ng build",
     "build:all": "node scripts/build-all.js",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "npm run lint:ts && npm run lint:styles",
+    "lint:fix": "npm run lint:ts:fix && npm run lint:styles:fix",
+    "lint:ts": "eslint . --ext .ts",
+    "lint:ts:fix": "eslint . --ext .ts --fix",
+    "lint:styles": "stylelint \"**/*.{css,scss}\"",
+    "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix"
   },
   "private": true,
   "packageManager": "npm@11.19.0",
@@ -25,13 +31,21 @@
     "@angular/build": "^22.2.7",
     "@angular/cli": "^22.2.7",
     "@angular/compiler-cli": "^22.2.0",
+    "@eslint/js": "^9.39.5",
     "@tailwindcss/postcss": "^4.1.12",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-prettier": "^5.5.7",
     "jsdom": "^30.0.0",
     "ng-packagr": "^22.2.0",
     "postcss": "^8.5.3",
     "prettier": "^3.8.1",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-prettier": "^3.0.0",
     "tailwindcss": "^4.1.12",
     "typescript": "~6.0.2",
+    "typescript-eslint": "^8.74.0",
     "vitest": "^5.0.0"
   }
 }
