@@ -2,14 +2,12 @@
 
 A web based tool for managing artistic references.
 
-
 ## Motivation
 
 This project is a relatively simple application for managing (categorizing,
 adding, removing, and viewing) large amounts of artistic references.
 
 > There are plenty of other options that solve this problem, this one is mine.
-
 
 ## Goals
 
@@ -27,8 +25,10 @@ adding, removing, and viewing) large amounts of artistic references.
   manner, e.g. by providing color and composition breakdowns, support for timed
   exercises, etc.
 
-
 ## Architecture
+
+> To aid in keeping a single source of truth, consult the README.md in the
+> relevant directory for more detailed information.
 
 ### Client
 
