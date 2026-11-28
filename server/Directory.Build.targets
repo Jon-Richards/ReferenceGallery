@@ -1,0 +1,7 @@
+<Project>
+  <Target Name="CheckSourceLineLimits"
+          BeforeTargets="Build"
+          Condition="'$(DesignTimeBuild)' != 'true'">
+    <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)check-source-lines.ps1&quot;" />
+  </Target>
+</Project>

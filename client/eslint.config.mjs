@@ -23,6 +23,16 @@ export default [
     },
     rules: {
       'prettier/prettier': 'warn',
+      'complexity': ['error', 10],
+      'max-lines': ['error', { max: 200, skipBlankLines: true, skipComments: true }],
+      'max-lines-per-function': ['error', { max: 20, skipBlankLines: true, skipComments: true }],
+    },
+  },
+  {
+    files: ['**/*.spec.ts', '**/*.test.ts', '**/tests/**/*.ts'],
+    rules: {
+      'max-lines': 'off',
+      'max-lines-per-function': 'off',
     },
   },
   {

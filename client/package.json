@@ -12,7 +12,7 @@
     "lint:fix": "npm run lint:ts:fix && npm run lint:styles:fix",
     "lint:ts": "eslint . --ext .ts",
     "lint:ts:fix": "eslint . --ext .ts --fix",
-    "lint:styles": "stylelint \"**/*.{css,scss}\"",
+    "lint:styles": "stylelint \"**/*.{css,scss}\" --allow-empty-input",
     "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix",
     "prepare": "cd .. && husky install client"
   },
